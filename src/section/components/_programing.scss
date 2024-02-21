@@ -1,0 +1,65 @@
+.section-programing {
+  &-p1 {
+    background: url(./section/images/programing-1.png) no-repeat;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20%;
+      right: -10%;
+      width: 681px;
+      height: 265px;
+      background: url(./section/images/question-list.gif) no-repeat;
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+    }
+  }
+  &-p2 {
+    background: url(./section/images/programing-2.png) no-repeat;
+    .gif-box {
+      position: relative;
+      right: -35%;
+      top: 35%;
+      width: 650px;
+      height: 162px;
+      border: solid 6px $gray;
+      border-radius: 15px;
+      scale: 0.7;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        margin: auto;
+        transform: translate(-50%, -50%);
+        background: url(./section/images/programing.gif) no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 12px;
+      }
+    }
+  }
+  &-p3 {
+    background: url(./section/images/programing-3.png) no-repeat;
+  }
+  &-p1,
+  &-p2,
+  &-p3{
+    position: relative;
+    background-size: 90%;
+    background-position: center;
+    height: 100vh;
+    button {
+      display: inline-block;
+      top: 30%;
+      left: 50%;
+      width: 48px;
+      height: 48px;
+      position: absolute;
+      background: url(./section/images/icon-github.png);
+      background-size: contain;
+    }
+  }
+}

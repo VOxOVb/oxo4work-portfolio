@@ -1,0 +1,52 @@
+.section-catquiz {
+  height: 100vh;
+  background: url(./section/images/catquiz.png) no-repeat;
+  background-size: 90%;
+  background-position: center;
+  display: flex;
+  place-content: flex-end;
+  align-items: flex-end;
+  padding: 10vh 20vh 25vh 20vh;
+  .game-link {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    line-height: 1.8rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    button {
+      position: relative;
+      margin: 1rem auto;
+      width: 224px;
+      height: 75px;
+      scale: 0.8;
+      display: inline-block;
+      background-image: url(./section/images/btn_p_index.png),
+        url(./section/images/btn_bg_index.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      animation: guide-btn;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      transition: 0.35s;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 141px;
+        height: 135px;
+        background: url(./section/images/paw.png) no-repeat;
+        background-size: contain;
+        filter: drop-shadow(3px 3px 6px rgb(174, 174, 174));
+        left: 82%;
+        top: 90%;
+        animation: guide;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        transition: 0.35s;
+      }
+    }
+  }
+}
