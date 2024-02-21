@@ -5,7 +5,7 @@ header {
   .container {
     display: none;
   }
-  @media only screen and (min-width: 1025px){
+  @media only screen and (min-width: 1025px) {
     .container {
       @media only screen and (min-width: 1920px) {
         width: 60vw;
@@ -126,7 +126,8 @@ header {
         &:hover .text {
           transition: 0.3s;
           will-change: transform;
-          transform: perspective(600px) rotateY(-30deg) translate(-1.5rem, -1rem);
+          transform: perspective(600px) rotateY(-30deg)
+            translate(-1.5rem, -1rem);
           filter: drop-shadow(1px 1px rgb(96, 103, 135));
         }
         .text {
@@ -154,7 +155,8 @@ header {
         }
         .btn-hover-effect {
           transition: 0.3s;
-          transform: perspective(600px) rotateY(-30deg) translate(-1.5rem, -1rem);
+          transform: perspective(600px) rotateY(-30deg)
+            translate(-1.5rem, -1rem);
           filter: drop-shadow(1px 1px rgb(96, 103, 135));
         }
       }
@@ -292,11 +294,10 @@ header {
 }
 
 @media only screen and (max-width: 1024px) {
-    .device-alert {
-      width: 100vw;
-      background: url(./shared/images/device-alert.png) no-repeat;
-      background-size: 60%;
-      background-position: center;
-    
-    }
+  .device-alert {
+    width: 100vw;
+    background: url(./shared/images/device-alert.png) no-repeat;
+    background-size: 60%;
+    background-position: center;
+  }
 }
