@@ -99,7 +99,7 @@ header .container {
 }
 @media only screen and (min-width: 1025px) {
   header .container {
-    width: 75vw;
+    width: 70vw;
     aspect-ratio: 3/2;
     display: grid;
     grid-template-rows: repeat(8, 1fr);
