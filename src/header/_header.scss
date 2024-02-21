@@ -7,9 +7,6 @@ header {
   }
   @media only screen and (min-width: 1025px) {
     .container {
-      @media only screen and (min-width: 1920px) {
-        width: 60vw;
-      }
       width: 75vw;
       aspect-ratio: 3/2;
       display: grid;
@@ -289,6 +286,12 @@ header {
           opacity: 1;
         }
       }
+    }
+  }
+
+  @media only screen and (min-width: 1920px) {
+    .container {
+      width: 60vw;
     }
   }
 }
