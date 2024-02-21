@@ -114,6 +114,13 @@ header .container {
     will-change: transform;
     animation: infinite floating linear 15s;
   }
+}
+@media only screen and (min-width: 1025px) and (min-width: 1920px) {
+  header .container {
+    width: 60vw;
+  }
+}
+@media only screen and (min-width: 1025px) {
   header .container > div {
     margin: 0.6rem;
     border: solid #333 3.5px;
@@ -357,11 +364,6 @@ header .container {
   header .container .emoji:hover::before {
     animation-play-state: paused;
     opacity: 1;
-  }
-}
-@media only screen and (min-width: 1920px) {
-  header .container {
-    width: 60vw;
   }
 }
 
