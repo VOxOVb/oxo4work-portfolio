@@ -1,0 +1,90 @@
+@use "./variable" as *;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  user-select: none;
+}
+::-webkit-scrollbar {
+  // display: none;
+  width: 15px;
+  &-track {
+    border-radius: 15px;
+    box-shadow: inset 0 0 5px grey;
+  }
+  &-thumb {
+    background: $second-color;
+    border-radius: 10px;
+    &:hover {
+      background: $primary-color;
+    }
+  }
+}
+
+* {
+  margin: 0;
+  font-family: FakePearl-Regular, "Microsoft JhengHei", "微軟正黑體", "PingFang",
+    "LiHei Pro", "黑體-繁", sans-serif;
+  // scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+picture,
+video,
+canvas,
+svg,
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+  cursor: inherit;
+}
+
+a:link:active,
+a:visited:active {
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul,
+li {
+  text-decoration: none;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
