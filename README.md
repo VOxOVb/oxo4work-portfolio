@@ -56,6 +56,31 @@ const numY = useStateMachineInput(rive, "State Machine 1", "mouseY", 50);
 **🐈 內容頁的角落圖示，暗示可採用方向鍵滾動，優化使用者瀏覽體驗**
 ![](readme/images/06.gif)
 
+```js
+const handleKeyboard = (e) => {
+  if (e.code === "ArrowDown") {
+    e.preventDefault();
+    if (scrollPosition === 12) return;
+    setScrollPosition((scrollPosition) => scrollPosition + 1);
+  } else if (e.code === "ArrowUp") {
+    e.preventDefault();
+    if (scrollPosition === 0) return;
+    setScrollPosition((scrollPosition) => scrollPosition - 1);
+  }
+};
+const handleScrollbar = () => {
+  const viweport = document.body.getBoundingClientRect().height / 13;
+  const scrollbarValue = Math.round(window.scrollY / viweport);
+  setScrollPosition(scrollbarValue);
+};
+useEffect(() => {
+  window.scrollTo({
+    top: scrollPosition * window.innerHeight,
+    behavior: "smooth",
+  });
+}, [scrollPosition]);
+```
+
 <br>
 
 **🐈 考量內容為求職需要，在手機版呈現裝置建議圖示**
