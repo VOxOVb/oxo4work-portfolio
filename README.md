@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+## 貓奴檢定 🐈 - 介紹網頁
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> 介紹貓奴檢定的視覺設計及看不到的程式小巧思，將本來置於 Behance 等平台的平面內容，使用 Rive 及 CSS 加上一個有互動性的登陸頁，並監聽滾動事件，以優化使用者體驗。
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+### 專案特點 ✨ <code>#React</code> <code>#SCSS</code>
 
-### `npm start`
+> 因為貓奴檢定為日式風格，加入同樣日系、近年設計趨勢 ── Bento design ， Hover 上不同區塊，會有不同的效果。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**🐈 在網頁動畫製作平台 Rive ，將貓奴檢定中的貓貓加以設計，利用滑鼠監聽事件加上互動效果**
+![](readme/images/00.gif)
 
-### `npm test`
+```js
+const { rive, setCanvasRef, setContainerRef } = useRive({
+  src: "./images/cat-tracking.riv",
+  stateMachines: "State Machine 1",
+  layout: new Layout({
+    fit: Fit.Contain,
+    alignment: Alignment.Center,
+  }),
+  autoplay: true,
+});
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+const numX = useStateMachineInput(rive, "State Machine 1", "mouseX", 50);
+const numY = useStateMachineInput(rive, "State Machine 1", "mouseY", 50);
+```
 
-### `npm run build`
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**🐈 UIUX 連結處採浮動效果，讓物件稍微超出區塊格線，增加立體感**
+![](readme/images/01.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**🐈 自我介紹連結處採透視效果**
+![](readme/images/02.gif)
 
-### `npm run eject`
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**🐈 在空白區放上貓貓 emoji 作為小彩蛋**
+![](readme/images/03.gif)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**🐈 貓貓 emoji 動畫則是今日運勢小互動**
+![](readme/images/04.gif)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<br>
 
-## Learn More
+**🐈 程式連結處則變換程式碼長度，表示專案開發中，不停修正改進的過程**
+![](readme/images/05.gif)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**🐈 內容頁的角落圖示，暗示可採用方向鍵滾動，優化使用者瀏覽體驗**
+![](readme/images/06.gif)
 
-### Code Splitting
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**🐈 考量內容為求職需要，在手機版呈現裝置建議圖示**
+![](readme/images/00.png)
