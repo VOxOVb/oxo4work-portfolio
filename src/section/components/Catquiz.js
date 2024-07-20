@@ -6,7 +6,7 @@ export default function Catquiz() {
         <p>貓奴檢定考，等你來挑戰！</p>
         <div>
           <a
-            href="https://catquizoxo.netlify.app/"
+            href="https://meowmastery.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >

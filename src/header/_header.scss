@@ -54,6 +54,7 @@ header {
         align-items: center;
         justify-content: space-between;
         .index {
+          cursor: default;
           border: solid 3.5px $black;
           background-color: $primary-color;
         }

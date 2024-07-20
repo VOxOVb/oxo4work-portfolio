@@ -10,23 +10,37 @@ export default function Header({
 }) {
   const [handleHover, setHandleHover] = useState("");
   const [handleBtnHover, setHandleBtnHover] = useState("");
-  const handleMouseMove = (e) => {
-    setHandleHover(e);
+  const [startTime, setStartTime] = useState(0);
+
+  const handleMouseEnter = (elementID) => {
+    setHandleHover(elementID);
+    setStartTime( Date.now());
+
   };
-  const handleMouseOut = () => {
+  const handleMouseLeave = (elementID) => {
+    const endTime =  Date.now();
+    const hoverTime = startTime - endTime;
     setHandleHover("");
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "hoverTime",
+      hoverTime: hoverTime,
+      elementID: handleHover,
+    });
+
   };
-  const handleBtnMouseMove = (e) => {
-    setHandleBtnHover(e);
+  const handleBtnMouseEnter = (elementID) => {
+    setHandleBtnHover(elementID);
   };
-  const handleBtnMouseOut = () => {
+  const handleBtnMouseOut = (elementID) => {
     setHandleBtnHover("");
   };
-  const handleOnClick = (e) => {
+  const handleOnClick = (elementID) => {
     setHandleHover("");
     setHandleBtnHover("");
     setHandleToggle(true);
-    setHandleBtnClick(e);
+    setHandleBtnClick(elementID);
   };
   useEffect(() => {
     if (handleBtnClick) {
@@ -42,33 +56,33 @@ export default function Header({
               <button className="index">Index</button>
 
               <button
-                className={handleHover === "catquiz" ? "div-hover" : ""}
-                onMouseMove={() => handleBtnMouseMove("catquiz")}
-                onMouseOut={handleBtnMouseOut}
+                className={handleHover === "btn-catquiz" ? "div-hover" : ""}
+                onMouseEnter={() => handleBtnMouseEnter("btn-catquiz")}
+                onMouseLeave={() => handleBtnMouseOut("btn-catquiz")}
                 onClick={() => handleOnClick(0)}
               >
                 MeowMastery
               </button>
               <button
                 className={handleHover === "uiux" ? "div-hover" : ""}
-                onMouseMove={() => handleBtnMouseMove("uiux")}
-                onMouseOut={handleBtnMouseOut}
+                onMouseEnter={() => handleBtnMouseEnter("btn-uiux")}
+                onMouseLeave={() => handleBtnMouseOut("btn-uiux")}
                 onClick={() => handleOnClick(1)}
               >
                 UI/UX
               </button>
               <button
                 className={handleHover === "programing" ? "div-hover" : ""}
-                onMouseMove={() => handleBtnMouseMove("programing")}
-                onMouseOut={handleBtnMouseOut}
+                onMouseEnter={() => handleBtnMouseEnter("btn-programing")}
+                onMouseLeave={() => handleBtnMouseOut("btn-programing")}
                 onClick={() => handleOnClick(9)}
               >
                 Programing
               </button>
               <button
                 className={handleHover === "about" ? "div-hover" : ""}
-                onMouseMove={() => handleBtnMouseMove("about")}
-                onMouseOut={handleBtnMouseOut}
+                onMouseEnter={() => handleBtnMouseEnter("btn-about")}
+                onMouseLeave={() => handleBtnMouseOut("btn-about")}
                 onClick={() => handleOnClick(12)}
               >
                 About Me
@@ -76,13 +90,13 @@ export default function Header({
             </div>
             <div
               className="catquiz"
-              onMouseMove={() => handleMouseMove("catquiz")}
-              onMouseOut={handleMouseOut}
+              onMouseEnter={() => handleMouseEnter("catquiz")}
+              onMouseLeave={() => handleMouseLeave("catquiz")}
               onClick={() => handleOnClick(0)}
             >
               <div
                 className={
-                  handleBtnHover === "catquiz"
+                  handleBtnHover === "btn-catquiz"
                     ? "div-content btn-hover-effect"
                     : "div-content"
                 }
@@ -90,25 +104,25 @@ export default function Header({
             </div>
             <div
               className={
-                handleBtnHover === "uiux"
+                handleBtnHover === "btn-uiux"
                   ? "uiux btn-hover-effect-uiux"
                   : "uiux"
               }
-              onMouseMove={() => handleMouseMove("uiux")}
-              onMouseOut={handleMouseOut}
+              onMouseEnter={() => handleMouseEnter("uiux")}
+              onMouseLeave={() => handleMouseLeave("uiux")}
               onClick={() => handleOnClick(1)}
             >
               <RotateItem />
             </div>
             <div
               className="programing"
-              onMouseMove={() => handleMouseMove("programing")}
-              onMouseOut={handleMouseOut}
+              onMouseEnter={() => handleMouseEnter("programing")}
+              onMouseLeave={() => handleMouseLeave("programing")}
               onClick={() => handleOnClick(9)}
             >
               <div
                 className={
-                  handleBtnHover === "programing"
+                  handleBtnHover === "btn-programing"
                     ? "line active-1"
                     : "line line-1"
                 }
@@ -121,7 +135,7 @@ export default function Header({
               </div>
               <div
                 className={
-                  handleBtnHover === "programing"
+                  handleBtnHover === "btn-programing"
                     ? "line active-2"
                     : "line line-2"
                 }
@@ -143,7 +157,7 @@ export default function Header({
               </div>
               <div
                 className={
-                  handleBtnHover === "programing"
+                  handleBtnHover === "btn-programing"
                     ? "line active-3"
                     : "line line-3"
                 }
@@ -159,7 +173,7 @@ export default function Header({
               </div>
               <div
                 className={
-                  handleBtnHover === "programing"
+                  handleBtnHover === "btn-programing"
                     ? "line active-4"
                     : "line line-4"
                 }
@@ -173,13 +187,13 @@ export default function Header({
             </div>
             <div
               className="about"
-              onMouseMove={() => handleMouseMove("about")}
-              onMouseOut={handleMouseOut}
+              onMouseEnter={() => handleMouseEnter("about")}
+              onMouseLeave={() => handleMouseLeave("about")}
               onClick={() => handleOnClick(12)}
             >
               <div
                 className={
-                  handleBtnHover === "about" ? "text btn-hover-effect" : "text"
+                  handleBtnHover === "btn-about" ? "text btn-hover-effect" : "text"
                 }
               >
                 <h1>UI/UX</h1>

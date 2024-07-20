@@ -144,6 +144,7 @@ header .container {
     justify-content: space-between;
   }
   header .container .nav .index {
+    cursor: default;
     border: solid 3.5px #333;
     background-color: #ffa4cd;
   }
