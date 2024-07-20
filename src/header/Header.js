@@ -26,7 +26,7 @@ export default function Header({
     window.dataLayer.push({
       event: "hoverTime",
       hoverTime: hoverTime,
-      elementID: handleHover,
+      elementID: elementID,
     });
 
   };
@@ -34,7 +34,16 @@ export default function Header({
     setHandleBtnHover(elementID);
   };
   const handleBtnMouseOut = (elementID) => {
+    const endTime =  Date.now();
+    const hoverTime =  endTime - startTime;
     setHandleBtnHover("");
+    
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "hoverTime",
+      hoverTime: hoverTime,
+      elementID: elementID,
+    });
   };
   const handleOnClick = (elementID) => {
     setHandleHover("");
