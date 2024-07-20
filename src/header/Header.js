@@ -19,7 +19,7 @@ export default function Header({
   };
   const handleMouseLeave = (elementID) => {
     const endTime =  Date.now();
-    const hoverTime = startTime - endTime;
+    const hoverTime =  endTime - startTime;
     setHandleHover("");
 
     window.dataLayer = window.dataLayer || [];
