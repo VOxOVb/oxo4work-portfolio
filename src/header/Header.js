@@ -19,7 +19,7 @@ export default function Header({
   };
   const handleMouseLeave = (elementID) => {
     const endTime =  Date.now();
-    const hoverTime =  endTime - startTime;
+    const hoverTime =  (endTime - startTime) / 1000;
     setHandleHover("");
 
     window.dataLayer = window.dataLayer || [];
@@ -35,7 +35,7 @@ export default function Header({
   };
   const handleBtnMouseOut = (elementID) => {
     const endTime =  Date.now();
-    const hoverTime =  endTime - startTime;
+    const hoverTime =  (endTime - startTime) / 1000;
     setHandleBtnHover("");
     
     window.dataLayer = window.dataLayer || [];
