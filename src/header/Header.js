@@ -19,7 +19,7 @@ export default function Header({
   };
   const handleMouseLeave = (elementID) => {
     const endTime =  Date.now();
-    const hoverTime =  (endTime - startTime) / 1000;
+    const hoverTime = Number.trunc( (endTime - startTime) / 1000);
     setHandleHover("");
 
     window.dataLayer = window.dataLayer || [];
@@ -35,7 +35,7 @@ export default function Header({
   };
   const handleBtnMouseOut = (elementID) => {
     const endTime =  Date.now();
-    const hoverTime =  (endTime - startTime) / 1000;
+    const hoverTime = Number.trunc( (endTime - startTime) / 1000);
     setHandleBtnHover("");
     
     window.dataLayer = window.dataLayer || [];
@@ -214,8 +214,12 @@ export default function Header({
             <div className="riveCat">
               <RiveCat />
             </div>
-            <div className="blank"></div>
-            <div className="emoji"></div>
+            <div className="blank"
+              onMouseEnter={() => handleMouseEnter("blank")}
+              onMouseLeave={() => handleMouseLeave("blank")}></div>
+            <div className="emoji"
+              onMouseEnter={() => handleMouseEnter("emoji")}
+              onMouseLeave={() => handleMouseLeave("emoji")}></div>
           </div>
           <div className="device-alert"></div>
         </header>
