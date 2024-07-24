@@ -19,31 +19,34 @@ export default function Header({
   };
   const handleMouseLeave = (elementID) => {
     const endTime =  Date.now();
-    const hoverTime = Math.ceil( (endTime - startTime) / 1000);
+    const hoverTime = Math.ceil( (endTime - startTime) / 10) / 100;
     console.log(hoverTime);
     setHandleHover("");
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: "hoverTime",
-      hoverTime: hoverTime,
-      elementID: elementID,
+      "event": "hoverTime",
+      "hoverTime": hoverTime,
+      "elementID": elementID,
+      "elementHoverTime": `element: ${elementID}, hoverTime: ${hoverTime}`
     });
 
   };
   const handleBtnMouseEnter = (elementID) => {
     setHandleBtnHover(elementID);
+    setStartTime( Date.now());
   };
   const handleBtnMouseLeave = (elementID) => {
     const endTime =  Date.now();
-    const hoverTime = Math.ceil( (endTime - startTime) / 1000);
+    const hoverTime = Math.ceil( (endTime - startTime) / 10) / 100;
     setHandleBtnHover("");
     
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: "hoverTime",
-      hoverTime: hoverTime,
-      elementID: elementID,
+      "event": "hoverTime",
+      "hoverTime": hoverTime,
+      "elementID": elementID,
+      "elementHoverTime": `element: ${elementID}, hoverTime: ${hoverTime}`
     });
   };
   const handleOnClick = (elementID) => {
